@@ -12,7 +12,7 @@ Será adicionado alguns arquivos no seu projeto
 - assets/icons
 
 #### 3 - Modifique os icones em assets/icons (modifique as imagens)
-#### 4 - Altere o manifesto. ex:
+#### 4 - Altere o manifesto do projeto manifest.webmanifest
 ```sh
 {
   "name": "Manutenção Gps",
@@ -78,7 +78,7 @@ Será adicionado alguns arquivos no seu projeto
 }
 ```
 #### Gerando seu projeto com suporte PWA para produção
-Rode o comando para gerar os arquivos de produção
+Rode o comando abaixo para gerar os arquivos de produção em www
 ```sh
 ionic build --prod
 ```
