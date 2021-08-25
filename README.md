@@ -254,6 +254,34 @@ export class AppComponent implements OnInit {
 }
 
 ```
+#### Utiliza IIS, Então Leia!
+Se você utiliza o IIS, provavelmente seu servidor não irá reconhecer o arquivo manifest.webmanifest, com isso seu pwa não vai conseguir identificar novas alterações.
+
+Para resolver é só configurar o mime-type no seu diretório virtual, você pode fazer isso através do web.config
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <staticContent>
+            <mimeMap fileExtension=".webmanifest" mimeType="application/x-ms-manifest" />
+        </staticContent>
+		<rewrite>
+		<rules>
+			<rule name="Redirect to https" enabled="true" patternSyntax="ECMAScript" stopProcessing="true">
+				<match url="(.*)" negate="false" />
+				<conditions logicalGrouping="MatchAll">
+							<add input="{HTTPS}" pattern="off" />
+				</conditions>
+				<action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Found" />
+			</rule>
+		</rules>
+	</rewrite>
+    </system.webServer>
+</configuration>
+
+```
+
+
 
 
 
