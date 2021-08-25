@@ -1,7 +1,7 @@
-# Criando-PWA-no-Ionic-5
+## Instalação do PWA no Ionic 5 + Resolvendo problemas de Cache
 Passos para transformar sua aplicação em um PWA usando Ionic Framework 5
 
-## Instalação do PWA no Ionic 5
+
 #### 1 - Leia a documentação (https://ionicframework.com/docs/angular/pwa)
 #### 2 - Rode o comando abaixo para adicionar suporte ao PWA no Ionic 5
 ```sh
@@ -83,7 +83,7 @@ Rode o comando para gerar os arquivos de produção
 ionic build --prod
 ```
 
-#### Problemas com cache
+### Resolvendo problemas de Cache
 É muito comum você ter problemas com o cache, ou seja, quando sobe uma nova versão não é atualizado para o cliente.
 
 Para resolver este problema é necessário usar SwUpdate, com ele é possível você identificar uma nova atualização e notificar o cliente.
